@@ -1,0 +1,9 @@
+void loop() {
+    // collcet data from analog A0 
+    int value = analogRead(A0); // read the collected vaule 
+    String soil = String(value); // change the value to string 
+    
+    //publish the data to the cloud evrey 30 sec 
+    Particle.publish("soil", soil, PRIVATE); // publish data to soil field in ThingSpeak
+    delay(30000);               // Wait for 30 seconds
+}
