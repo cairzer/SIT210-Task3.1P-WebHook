@@ -1,6 +1,10 @@
+const int sensor_pin = A0;	/* Soil moisture sensor O/P pin */
+void setup() {
+  Serial.begin(9600);	/* Define baud rate for serial communication */
+}
 void loop() {
     // collcet data from analog A0 
-    int value = analogRead(A0); // read the collected vaule 
+    int value = analogRead(sensor_pin); // read the collected vaule 
     String soil = String(value); // change the value to string 
     
     //publish the data to the cloud evrey 30 sec 
